@@ -7,7 +7,7 @@ import { Box, Typography } from '@mui/material';
 
 const App = () => {
   return (
-    <Grid container spacing={1} paddingX={60} paddingY={5}>
+    <Grid container spacing={1} paddingX={40} paddingY={5}>
       <Grid item xs={6}>
         <Box mb={2}>
           <Typography variant="h5">Subject</Typography>
