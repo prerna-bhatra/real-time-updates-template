@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+// components/App.js
+import React from 'react';
+import Grid from '@mui/material/Grid';
+import EmailSubjectInput from './components/EmailSubjectInput';
+import EmailPreviewPanel from './components/EmailPreviewPanel';
+import { Box, Typography } from '@mui/material';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <Grid container spacing={1} paddingX={60} paddingY={5}>
+      <Grid item xs={6}>
+        <Box mb={2}>
+          <Typography variant="h5">Subject</Typography>
+          <Typography variant="h6">Add a subject line for this variant</Typography>
+        </Box>
+        <EmailSubjectInput />
+      </Grid>
+      <Grid item xs={6} container alignItems="flex-start" marginTop={10}>
+        <EmailPreviewPanel />
+      </Grid>
+    </Grid>
+);
+};
 
 export default App;
