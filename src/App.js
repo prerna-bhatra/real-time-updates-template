@@ -5,6 +5,8 @@ import EmailSubjectInput from './components/EmailSubjectInput';
 import EmailPreviewPanel from './components/EmailPreviewPanel';
 import { Box, Typography } from '@mui/material';
 
+import "./App.css"
+
 const App = () => {
   return (
     <Grid container spacing={1} paddingX={40} paddingY={5}>
