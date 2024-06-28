@@ -2,11 +2,12 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import TextField from '@mui/material/TextField';
 import { setEmailSubject, setPreviewText, addEmail, setSender } from '../redux/emailSlice';
-import { Button } from '@mui/material';
+import { Button, TextareaAutosize } from '@mui/material';
+import './EmailSubjectInput.css'; // Import the CSS file
 
 const EmailSubjectInput = () => {
   const emails = useSelector(state => state.email.emails);
-  console.log({ emails })
+  console.log({ emails });
 
   const dispatch = useDispatch();
   const subject = useSelector(state => state.email.emails[0].subject);
@@ -25,46 +26,59 @@ const EmailSubjectInput = () => {
     dispatch(setSender({ id: 0, sender: e.target.value }));
   };
 
-
   const handleAddEmail = () => {
-    dispatch(addEmail({ subject, previewText , sender }));
+    dispatch(addEmail({ subject, previewText, sender }));
   };
 
   return (
-    <>
-      <TextField
-        label="Email Sender"
-        value={sender}
-        onChange={handleSenderChange}
-        fullWidth
-        variant="outlined"
-        margin="normal"
-      />
+    <div>
+      <div>
+        <TextareaAutosize
+          value={sender}
+          onChange={handleSenderChange}
+          fullWidth
+          variant="outlined"
+          margin="normal"
+          className="textarea"
+        />
+      </div>
 
-      <TextField
-        label="Email Subject"
-        value={subject}
-        onChange={handleSubjectChange}
-        fullWidth
-        variant="outlined"
-        margin="normal"
-      />
-      <TextField
-        label="Preview Text"
-        value={previewText}
-        onChange={handlePreviewTextChange}
-        fullWidth
-        variant="outlined"
-        margin="normal"
-      />
-      <Button
-        variant="contained"
-        color="secondary"
-        onClick={handleAddEmail}
-      >
-        Add Email
-      </Button>
-    </>
+      <div>
+        <TextareaAutosize
+          label="Email Subject"
+          value={subject}
+          onChange={handleSubjectChange}
+          fullWidth
+          variant="outlined"
+          margin="normal"
+          className="textarea"
+        />
+      </div>
+
+      <div>
+        <TextareaAutosize
+          label="Preview Text"
+          value={previewText}
+          onChange={handlePreviewTextChange}
+          fullWidth
+          variant="outlined"
+          margin="normal"
+          className="textarea"
+        />
+      </div>
+
+      <div className="add-email-button-container">
+        <Button
+          variant="contained"
+          color="secondary"
+          onClick={handleAddEmail}
+          className=""
+        >
+          Add Email
+        </Button>
+      </div>
+
+    </div>
   );
 };
 

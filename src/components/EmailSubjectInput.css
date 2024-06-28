@@ -1,0 +1,28 @@
+.textarea {
+    width: 92%;
+    margin-top: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid black;
+    resize: none; /* Disable resizing */
+    font-size: 20px;
+
+  }
+  
+  .textarea:focus {
+    border-color: rgb(4, 4, 82);
+    border: 2px solid rgb(4, 4, 82) ;
+    outline: none;
+  }
+  
+  .button {
+    margin-top: 10px;
+  }
+  
+  .add-email-button-container {
+    /* width: 1; */
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px; /* Adjust spacing as needed */
+  }
+  

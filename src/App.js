@@ -6,11 +6,12 @@ import EmailPreviewPanel from './components/EmailPreviewPanel';
 import { Box, Typography } from '@mui/material';
 
 import "./App.css"
+import MobileView from './components/MobileView';
 
 const App = () => {
   return (
-    <Grid container spacing={1} paddingX={40} paddingY={5}>
-      <Grid item xs={6}>
+    <Grid container spacing={2} paddingX={60} paddingY={5}>
+      <Grid item xs={6} className='subject-panel-container'>
         <Box mb={2}>
           <Typography variant="h5">Subject</Typography>
           <Typography variant="h6">Add a subject line for this variant</Typography>
@@ -18,7 +19,8 @@ const App = () => {
         <EmailSubjectInput />
       </Grid>
       <Grid item xs={6} container alignItems="flex-start" marginTop={10}>
-        <EmailPreviewPanel />
+        {/* <EmailPreviewPanel /> */}
+        <MobileView/>
       </Grid>
     </Grid>
 );

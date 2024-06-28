@@ -1,9 +1,44 @@
-.email-preview{
-  border: 1px solid #ccc; /* Border style */
-  border-radius: 12px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+
 
 .font-bold-700{
   font-weight: bold;
+}
+
+.email-form-container {
+  display: flex;
+  align-items: center;
+}
+
+.form-fields {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-text-field {
+  margin-bottom: 10px;
+}
+
+.custom-textarea {
+  width: 100%;
+  height: 80px;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  resize: vertical; /* Allow vertical resizing */
+  margin-bottom: 10px;
+}
+
+.custom-textarea:focus, /* Focus styling */
+.custom-text-field:focus {
+  outline: none;
+  border-color: #1976d2; /* Blue border color on focus */
+}
+
+.add-email-button {
+  margin-left: 10px;
+}
+
+.subject-panel-container{
+  padding: 40px;
 }
